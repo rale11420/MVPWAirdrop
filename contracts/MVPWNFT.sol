@@ -16,10 +16,12 @@ contract MVPWNFT is ERC721, ERC721URIStorage, Ownable {
     Counters.Counter private _tokenIdCounter;
     string[] public uris;
     bool private status;
+    uint256 private numberOfAddresses;
 
-    constructor(string[] memory _uris) ERC721("MVP Workshop NFT", "MVPWNFT") {
+    constructor(string[] memory _uris, uint256 _numberOfAddresses) ERC721("MVP Workshop NFT", "MVPWNFT") {
         uris = _uris;
         status = false;
+        numberOfAddresses = _namberOfAddresses;
     }
 
     /// @notice Mints all tokens to owner
