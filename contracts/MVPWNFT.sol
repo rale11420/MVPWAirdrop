@@ -29,7 +29,7 @@ contract MVPWNFT is ERC721, ERC721URIStorage, Ownable {
     function safeMint() public onlyOwner {
         require(!status,"Already minted");
         status = true;
-        for(uint256 i = 0; i < uris.length; i++){
+        for(uint256 i = 0; i < numberOfAddresses; i++){
             uint256 tokenId = _tokenIdCounter.current();
             _tokenIdCounter.increment();
             _safeMint(msg.sender, tokenId);
